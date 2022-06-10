@@ -6,12 +6,10 @@ import PostList from "./PostList";
 
 function Post() {
   return (
-    <PostProvider>
-      <Routes>
-        <Route path="/" element={<PostList />}></Route>
-        <Route path=":id" element={<EditPost />}></Route>
-      </Routes>
-    </PostProvider>
+    <Routes>
+      <Route path="/" element={<PostList />}></Route>
+      <Route path=":id" element={<EditPost />}></Route>
+    </Routes>
   );
 }
 

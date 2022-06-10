@@ -4,6 +4,9 @@ import styled from "styled-components";
 import {
   PostDispatchContext,
   PostStateContext,
+  usePostDispatch,
+  usePostNextId,
+  usePostState,
 } from "../../contexts/postContext";
 import Button from "../common/Button";
 import TitleBox from "../common/TitleBox";
@@ -43,10 +46,10 @@ const dateOpts = {
 };
 
 function EditPost() {
-  const { id } = useParams();
-  const postList = useContext(PostStateContext);
-  const lastId = postList[postList.length - 1].id;
+  const postList = usePostState();
+  const nextId = usePostNextId();
   const navigate = useNavigate();
+  const { id } = useParams();
   const post = postList.filter((post) => post.id === parseInt(id))[0];
   // 다른 방법
   // const post = postList.filter((post) => post.id === parseInt(id))[0] || {title:"", content:""}
@@ -56,14 +59,12 @@ function EditPost() {
     content: post?.content,
   });
 
-  const { title, content } = inputs;
-
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInputs({ ...inputs, [name]: value });
   };
 
-  const dispatch = useContext(PostDispatchContext);
+  const dispatch = usePostDispatch();
 
   const onCreate = () => {
     const { title, content } = inputs;
@@ -71,12 +72,13 @@ function EditPost() {
     dispatch({
       type: "CREATE_POST",
       post: {
-        id: lastId + 1,
+        id: nextId.current,
         title,
         content,
         created_at,
       },
     });
+    nextId.current++;
     navigate("/post");
   };
 

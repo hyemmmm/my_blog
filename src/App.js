@@ -1,6 +1,7 @@
 import SidebarTemplate from "./components/sidebar/SidebarTemplate";
 import { createGlobalStyle } from "styled-components";
 import Main from "./components/main/Main";
+import { PostProvider } from "./contexts/postContext";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -21,11 +22,13 @@ const style = {
 
 function App() {
   return (
-    <div style={style} className="App">
-      <GlobalStyle></GlobalStyle>
-      <SidebarTemplate></SidebarTemplate>
-      <Main></Main>
-    </div>
+    <PostProvider>
+      <div style={style} className="App">
+        <GlobalStyle></GlobalStyle>
+        <SidebarTemplate></SidebarTemplate>
+        <Main></Main>
+      </div>
+    </PostProvider>
   );
 }
 
