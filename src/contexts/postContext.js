@@ -12,6 +12,10 @@ function reducer(state, action) {
       return state.map((post) => {
         return post.id === action.post.id ? action.post : post;
       });
+    case "REMOVE_POST":
+      return state.filter((post) => {
+        return post.id !== action.id;
+      });
     default:
       return state;
   }

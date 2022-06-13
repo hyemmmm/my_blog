@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { PostStateContext, usePostState } from "../../contexts/postContext";
 import Button from "../common/Button";
 import TitleBox from "../common/TitleBox";
 import Postitem from "./Postitem";
@@ -9,7 +9,7 @@ import Postitem from "./Postitem";
 const Block = styled.div``;
 
 function PostList() {
-  const postList = usePostState();
+  const postList = useSelector((state) => state.post);
   const navigate = useNavigate();
   return (
     <Block>
@@ -24,9 +24,11 @@ function PostList() {
           </Postitem>
         ))}
       </ul>
-      <Button text="작성하기" onClick={() => navigate("/post/write")} />
+      <Button text="작성하기" onClick={() => navigate("/post/edit/write")} />
     </Block>
   );
 }
 
 export default PostList;
+
+//npm install redux react-redux @reducjs/toolkit

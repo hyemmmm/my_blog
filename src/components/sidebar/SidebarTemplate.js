@@ -10,7 +10,7 @@ const Block = styled.div`
 function SidebarTemplate() {
   return (
     <Block>
-      <SidebarList></SidebarList>
+      <SidebarList />
     </Block>
   );
 }

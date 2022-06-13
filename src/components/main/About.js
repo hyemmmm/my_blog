@@ -1,7 +1,4 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import styled from "styled-components";
-import Detail from "./Detail";
 
 function About() {
   return (

@@ -28,7 +28,7 @@ const StyledLink = styled(Link)`
 `;
 
 function SidebarCategory({ data, onClickMenu }) {
-  const { text, url, active, id } = data;
+  const { text, url, active } = data;
   return (
     <Category active={active}>
       <StyledLink to={url}>{text}</StyledLink>
