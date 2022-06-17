@@ -35,6 +35,121 @@ const initialState = [
     created_at,
     comments: [],
   },
+  {
+    id: 3,
+    title: "첫 포스트",
+    content: "블로그를 시작했습니다",
+    created_at,
+    comments: [
+      {
+        id: 1,
+        user: {
+          id: 1,
+          name: "혜민",
+        },
+        content: "댓글내용",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "두번째 포스트",
+    content: "두번째 컨텐츠",
+    created_at,
+    comments: [],
+  },
+  {
+    id: 5,
+    title: "첫 포스트",
+    content: "블로그를 시작했습니다",
+    created_at,
+    comments: [
+      {
+        id: 1,
+        user: {
+          id: 1,
+          name: "혜민",
+        },
+        content: "댓글내용",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "두번째 포스트",
+    content: "두번째 컨텐츠",
+    created_at,
+    comments: [],
+  },
+  {
+    id: 7,
+    title: "첫 포스트",
+    content: "블로그를 시작했습니다",
+    created_at,
+    comments: [
+      {
+        id: 1,
+        user: {
+          id: 1,
+          name: "혜민",
+        },
+        content: "댓글내용",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "두번째 포스트",
+    content: "두번째 컨텐츠",
+    created_at,
+    comments: [],
+  },
+  {
+    id: 9,
+    title: "첫 포스트",
+    content: "블로그를 시작했습니다",
+    created_at,
+    comments: [
+      {
+        id: 1,
+        user: {
+          id: 1,
+          name: "혜민",
+        },
+        content: "댓글내용",
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: "두번째 포스트",
+    content: "두번째 컨텐츠",
+    created_at,
+    comments: [],
+  },
+  {
+    id: 11,
+    title: "첫 포스트",
+    content: "블로그를 시작했습니다",
+    created_at,
+    comments: [
+      {
+        id: 1,
+        user: {
+          id: 1,
+          name: "혜민",
+        },
+        content: "댓글내용",
+      },
+    ],
+  },
+  {
+    id: 12,
+    title: "두번째 포스트",
+    content: "두번째 컨텐츠",
+    created_at,
+    comments: [],
+  },
 ];
 let nextId = 3;
 

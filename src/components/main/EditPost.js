@@ -43,7 +43,7 @@ function EditPost() {
   const postList = useSelector((state) => state.post);
   const navigate = useNavigate();
   const { id } = useParams();
-  const post = postList.filter((post) => post.id === parseInt(id))[0];
+  const post = postList.find((post) => post.id === parseInt(id));
   // 다른 방법
   // const post = postList.filter((post) => post.id === parseInt(id))[0] || {title:"", content:""}
 

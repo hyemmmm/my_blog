@@ -1,12 +1,25 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { createComment } from "../../actions/post";
 import TitleBox from "../common/TitleBox";
 
 const ContentContainer = styled.div`
   max-width: 1000px;
+`;
+
+const ChangeButton = styled.span`
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 14px 28px;
+  display: inline-block;
+`;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const ContentBox = styled.div`
@@ -47,10 +60,16 @@ const PostDetail = () => {
   const post = postList.filter((post) => post.id === id)[0];
   const comments = post.comments;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <ContentContainer>
-      <TitleBox title={post.title}></TitleBox>
+      <Container>
+        <TitleBox title={post.title}></TitleBox>
+        <ChangeButton onClick={() => navigate("/post/edit/" + id)}>
+          수정하기
+        </ChangeButton>
+      </Container>
       <ContentBox>{post.content}</ContentBox>
       <CommentList>
         {" "}
