@@ -9,6 +9,7 @@ const Btn = styled.button`
   font-weight: bold;
   font-size: 28px;
   border: none;
+  cursor: pointer;
 `;
 
 function Button({ text, onClick }) {

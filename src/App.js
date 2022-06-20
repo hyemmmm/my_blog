@@ -5,6 +5,9 @@ import { combineReducers } from "redux";
 import post from "./actions/post";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
+import Button from "./components/common/Button";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const rootReducer = combineReducers({
   post,
@@ -32,6 +35,16 @@ const style = {
   // alignItems: "center",
 };
 
+const LoginBtn = styled(Link)`
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  padding: 14px 28px;
+  cursor: pointer;
+`;
+
 function App() {
   return (
     <Provider store={store}>
@@ -39,6 +52,8 @@ function App() {
         <GlobalStyle />
         <SidebarTemplate></SidebarTemplate>
         <Main></Main>
+        <LoginBtn to={"/login"}>로그인</LoginBtn>
+        {/* <StyledLink to={url}>{text}</StyledLink> */}
       </div>
     </Provider>
   );
