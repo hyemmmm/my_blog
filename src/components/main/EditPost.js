@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { createPost, updatePost } from "../../actions/post";
+import { searchPost, updatePost } from "../../actions/post";
+import { createPost } from "../../custom_axios";
 import Button from "../common/Button";
 import TitleBox from "../common/TitleBox";
 
@@ -61,9 +62,8 @@ function EditPost() {
 
   const onCreate = () => {
     const { title, content } = inputs;
-    const created_at = new Date().toLocaleDateString("ko-KR", dateOpts);
-    dispatch(createPost(title, content, created_at));
-    navigate("/post");
+    let result = createPost(title, content);
+    result.then(res => )
   };
 
   const onEdit = () => {
